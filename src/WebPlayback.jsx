@@ -14,8 +14,8 @@ const track = {
 
 function WebPlayback(props) {
 
-    const [is_paused, setPaused] = useState(false);
-    const [is_active, setActive] = useState(false);
+    const [is_paused, setPaused] = useState(true);
+    const [is_active, setActive] = useState(true);
     const [player, setPlayer] = useState(undefined);
     const [current_track, setTrack] = useState(track);
 
@@ -30,7 +30,7 @@ function WebPlayback(props) {
         window.onSpotifyWebPlaybackSDKReady = () => {
 
             const player = new window.Spotify.Player({
-                name: 'Web Playback SDK',
+                name: 'StudySpot Player',
                 getOAuthToken: cb => { cb(props.token); },
                 volume: 0.5
             });
